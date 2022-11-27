@@ -20,48 +20,23 @@ public:
 
 class Solution {
 public:
-    unordered_map<Node*, int> size_from_here;
-    
-    // unordered_set<Node*> seen;
-    
-    int size_of_tree(Node* root){
-        if(root == NULL){
-            return 0;
-        }
-        // if(seen.find(root)!=seen.end()){
-        //     return;
-        // }
-        
-        if(size_from_here[root]!=0){
-            return size_from_here[root];
-        }
-        
-        int size = 1;
-        for(auto c:root->children){
-            size += size_of_tree(c);
-        }
-        
-        size_from_here[root] = size;
-        return size;
-    }
-    
     Node* findRoot(vector<Node*> tree) {
-        int max_size = INT_MIN;
-        Node* max_node;
-        for(auto node: tree){
-            cout<<node->val;
-            int size = size_of_tree(node);
-            if(size>max_size){
-                max_size = size;
-                max_node = node;
+       int sum = 0;
+        
+        for(auto node:tree){
+            sum += node->val;
+            for(auto child:node->children){
+                sum -= child->val;
             }
-            
         }
         
-        return max_node;
+        
+        for(auto node:tree){
+            if(node->val == sum){
+                return node;
+            }
+        }
+        
+        return NULL;
     }
 };
-
-
-
-// 1 
