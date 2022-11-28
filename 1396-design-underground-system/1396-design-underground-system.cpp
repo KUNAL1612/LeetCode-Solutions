@@ -18,7 +18,7 @@ public:
         auto& info = inTransit[id];
         string startStation = info.first;
         int startTime = info.second;
-        string key = startStation + ":" + stationName;
+        string key = startStation + "->" + stationName;
         int time = t - startTime;
         
         if(stationTimes.find(key) != stationTimes.end()) {
@@ -33,7 +33,7 @@ public:
     }
     
     double getAverageTime(string startStation, string endStation) {
-        string key = startStation + ":" + endStation;
+        string key = startStation + "->" + endStation;
         auto& info = stationTimes[key];
         double avg = (double)info.first / (double)info.second;
         return avg;
