@@ -23,7 +23,7 @@ public:
                     }
                 }
                 
-                dp[i][j] = min(dp[i-1][j], dp[i][j]);
+                dp[i][j] = min(dp[i-1][j], dp[i][j]); // for if we already reached this node with lesser edges, or lesser stops
                 
             }
              
