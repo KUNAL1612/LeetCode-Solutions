@@ -57,4 +57,3 @@ public:
         return answer == INT_MAX ? -1 : answer;
     }
 };
-
