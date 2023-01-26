@@ -32,3 +32,5 @@ public:
         
     }
 };
+
+// this is bellman ford. good algorithm. 
