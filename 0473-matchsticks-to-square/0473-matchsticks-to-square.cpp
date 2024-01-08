@@ -25,7 +25,7 @@ public:
     
     bool find(vector<int>& nums, int sides_left, int target, int sum, int start, vector<bool>& visited)
     {
-        if (sides_left == 1) return true;
+        if (sides_left == 0) return true;
         
         if (sum > target)
             return false;
