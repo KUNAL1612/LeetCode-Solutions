@@ -41,3 +41,4 @@ public:
         
     }
 };
+//IDEA: Put everything in a dequeue, and pop from front and back
