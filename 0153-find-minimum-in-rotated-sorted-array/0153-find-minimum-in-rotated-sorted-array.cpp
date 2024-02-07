@@ -5,7 +5,7 @@ public:
         int left = 0;
         int right = nums.size() - 1;
         
-        if(nums[right] > nums[left]) return nums[0];
+        if(nums[right] > nums[left]) return nums[0]; // cross checking for everything where we don't need to binary sort at all
         
         while(right - left > 1)
         {
@@ -17,6 +17,6 @@ public:
                 right = middle;
         }
         
-        return nums[max(left, right)];
+        return nums[max(left, right)]; // we need to return 
     }
 };
