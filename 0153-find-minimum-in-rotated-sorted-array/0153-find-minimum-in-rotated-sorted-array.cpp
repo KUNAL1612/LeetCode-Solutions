@@ -17,6 +17,9 @@ public:
                 right = middle;
         }
         
-        return nums[max(left, right)]; // we need to return 
+        return nums[max(left, right)]; // we need to return the max of lo and hi
     }
 };
+
+
+// int left = 0, right = nums.size()-1;
