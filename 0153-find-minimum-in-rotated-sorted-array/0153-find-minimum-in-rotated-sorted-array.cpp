@@ -17,7 +17,7 @@ public:
                 right = middle;
         }
         
-        return nums[max(left, right)]; // we need to return the max of lo and hi
+        return nums[right]; // we need to return the max of lo and hi
     }
 };
 
