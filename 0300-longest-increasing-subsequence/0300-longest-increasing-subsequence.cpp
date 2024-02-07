@@ -22,8 +22,9 @@ private:
         int left = 0;
         int right = sub.size() - 1;
         int mid = 0;
-        
-        while (left < right) {
+        int result;
+                
+        while (left <= right) {
             mid = (left + right) / 2;
             if (sub[mid] == num) {
                 return mid;
@@ -32,10 +33,11 @@ private:
             if (sub[mid] < num) {
                 left = mid + 1;
             } else {
-                right = mid;
+                result = mid;
+                right = mid-1;
             }
         }
         
-        return left;
+        return result;
     }
 };
