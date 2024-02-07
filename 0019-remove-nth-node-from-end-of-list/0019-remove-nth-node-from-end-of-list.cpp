@@ -30,15 +30,15 @@ class Solution {
         }
         if(first==head)
         {
-            ListNode*temp=head;
+            
             head=head->next;
-            delete(temp);
+            
         }
         else
         {
-            ListNode*temp=first;
+            
             prev->next=first->next;
-            delete(temp);
+            
         }
         return head;
     }
