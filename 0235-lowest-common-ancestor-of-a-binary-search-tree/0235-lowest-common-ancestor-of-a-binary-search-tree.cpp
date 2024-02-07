@@ -10,24 +10,23 @@
 
 class Solution {
 public:
-    TreeNode* recurse(TreeNode* root,TreeNode* p, TreeNode* q){
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
         if(root==NULL){
             return NULL;
         }
-        if(root==p || root==q){     
+        int pval=p->val;
+        int qval=q->val;
+        int rval=root->val;
+        if(pval>rval && qval>rval){
+            return lowestCommonAncestor(root->right, p, q);
+        }
+        else if(pval<rval && qval<rval){
+            return lowestCommonAncestor(root->left, p, q);
+        }
+        else{
             return root;
         }
         
-        
-        TreeNode* left= recurse(root->left,p,q);
-        TreeNode* right= recurse(root->right,p,q);
-        if(left==NULL){return right;}
-        if(right==NULL){return left;}
-        
-        return root;
-    }
-    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        return recurse(root,p,q);
-        
     }
 };
+
