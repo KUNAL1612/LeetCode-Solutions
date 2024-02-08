@@ -55,7 +55,7 @@ public:
                     
                     int val = 1;
                     for(auto id:areas){
-                        val += id_to_area[id];
+                        val += id_to_area[id]; // why we do this: so that if there are multiple islands which are separated by thsi one 0, we can then use this 0 to join those two islands
                     }
                     retval = max(val,retval);
                 }
