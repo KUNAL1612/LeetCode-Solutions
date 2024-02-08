@@ -1,7 +1,7 @@
 class Solution {
 public:
     int lengthOfLIS(std::vector<int>& nums) {
-        std::vector<int> sub;
+        vector<int> sub;
         sub.push_back(nums[0]);
         
         for (int i = 1; i < nums.size(); i++) {
@@ -41,3 +41,14 @@ private:
         return result;
     }
 };
+
+// the previous was n^2. Need to do in NlogN
+
+
+// Initialize an array sub which contains the first element of nums.
+
+// Iterate through the input, starting from the second element. For each element num:
+
+// If num is greater than any element in sub, then add num to sub.
+// Otherwise, perform a binary search in sub to find the smallest element that is greater than or equal to num. Replace that element with num.
+// Return the length of sub.
