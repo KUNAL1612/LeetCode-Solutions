@@ -17,7 +17,7 @@ class Solution {
         }
 
         // Binary search way
-        while (right >= left) {
+        while (left<=right) {
             // Find the mid element
             int mid = left + (right - left) / 2;
 
