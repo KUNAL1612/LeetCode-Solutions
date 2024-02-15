@@ -13,6 +13,7 @@ public:
             int low=max(A[i][0],B[j][0]);
             int hi=min(A[i][1],B[j][1]);
             if(low<=hi){
+                // add code here to check if this intersection has anything common with previous interesection. If so, byump both of those by 1
                 vector<int> newa{low,hi};
                 ans.push_back(newa);
             }
@@ -27,3 +28,6 @@ public:
         return ans;
     }
 };
+
+
+//
