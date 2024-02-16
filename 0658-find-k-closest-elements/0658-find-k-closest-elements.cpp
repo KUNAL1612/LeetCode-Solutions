@@ -1,30 +1,23 @@
 class Solution {
 public:
-    vector<int> findClosestElements(vector<int>& arr, int k, int x) {
-        int n=arr.size();
-        
-        vector<int> ans;
-        
-        priority_queue<pair<int,int>> pq;
-        
-        for(int i=0;i<n;i++){
-            
-            if(pq.size()<k)
-                pq.push({abs(x-arr[i]),arr[i]});
-            else if(!pq.empty()&&pq.top().first>abs(x-arr[i])){
-                pq.pop();
-                pq.push({abs(x-arr[i]),arr[i]});
+vector<int> findClosestElements(vector<int>& arr, int k, int x) {
+        // Initialize binary search bounds
+        int left = 0;
+        int right = arr.size() - k;
+
+        // Binary search against the criteria described
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (x - arr[mid] > arr[mid + k] - x) {
+                left = mid + 1;
+            } else {
+                right = mid;
             }
         }
-        
-        int i=0;
-        while(!pq.empty()){
-            ans.push_back(pq.top().second);
-            pq.pop();
-        }
-        
-        sort(ans.begin(),ans.end());
-        return ans;
-        
+
+        // Create output in correct format
+        vector<int> result(arr.begin() + left, arr.begin() + left + k);
+
+        return result;
     }
 };
