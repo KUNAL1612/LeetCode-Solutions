@@ -19,7 +19,7 @@ public:
         TreeNode* R = lca(root->right, p, q);
         
         
-        // this is important, we need to the full recursion instead of just pruning it.
+        // this is important, we need to the full recursion instead of just pruning it. Should have thought of this edge case.
        
         if(root == p){
             isPpresent = true;
@@ -45,4 +45,4 @@ public:
     }
 };
 
-// 
+// Another simple way to do it -> check if both p and q exists first and then do recursion. 
