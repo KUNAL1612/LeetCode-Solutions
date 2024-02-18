@@ -8,7 +8,7 @@ public:
             // childTime > 0 indicates subtree of child has apples. Since the root node of the
             // subtree does not contribute to the time, even if it has an apple, we have to check it
             // independently.
-            if (childTime || hasApple[child]) totalTime += childTime + 2;
+            if (childTime || hasApple[child]) totalTime += childTime + 2; // 2 because 1 to get to child and 1 to come back
         }
 
         return totalTime;
