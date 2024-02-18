@@ -41,7 +41,7 @@ public:
             node->left = deque.back();
         else {
             node->right = deque.back();
-            deque.pop_front();
+            deque.pop_front(); // this node is now full and nothing else to add
         }
 
         return node->val;
