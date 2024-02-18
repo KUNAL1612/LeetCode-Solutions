@@ -24,7 +24,7 @@ class Solution {
             second=second->next;
             first=first->next;
             if(flag==1){
-                prev=prev->next;
+                prev=prev->next; // a prev node to track removals
             }
             flag=1;
         }
