@@ -1,10 +1,5 @@
 class Solution {
 public:
-    void coverall(vector<vector<char>>& board, int i, int j){
-        int m = board.size();
-        int n = board[0].size();
-        
-    }
     int countBattleships(vector<vector<char>>& board) {
         int m = board.size(), n = m ? board[0].size() : 0, battleships = 0;
         for (int i = 0; i < m; i++) {
