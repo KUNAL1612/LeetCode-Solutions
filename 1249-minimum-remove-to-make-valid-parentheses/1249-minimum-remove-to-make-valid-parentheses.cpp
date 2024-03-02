@@ -13,6 +13,7 @@ public:
             }
             else if(s[i] == ')'){
                 if(balance==0){
+                    // if the balance is already zero and we see a closing bracket we don't add it
                     continue;
                 }
                 balance--;
