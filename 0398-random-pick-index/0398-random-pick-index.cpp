@@ -57,7 +57,8 @@ public:
         for (int i = 0; i < nums.size(); ++i) {
             if (nums[i] == target) {
                 count++;
-                if (rand() % count == 0) {
+                int random = rand()%count + 1;
+                if (random == count) {
                     res = i;
                 }
             }
@@ -65,6 +66,9 @@ public:
         return res;
     }
 };
+
+
+
 
 /**
  * Your Solution object will be instantiated and called as such:
