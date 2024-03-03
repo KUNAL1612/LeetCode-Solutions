@@ -15,26 +15,49 @@
 // };
 
 
+// class Solution {
+// public:
+//     vector<int> A;
+//     Solution(vector<int>& nums) {
+//         A = nums;
+//     }
+    
+//     // C++: random = min + rand() % (max - min + 1) 
+//     int pick(int target) {
+//         int count = 0;
+//         int res = -1;
+//         for (int i = 0; i < A.size(); i++) {
+//             if (A[i] == target) {
+//                 if (res == -1) {  // this is important
+//                     res = i;
+//                 }
+//                 count++;
+//                 // int rand = 1 + std::rand() % (count - 1 + 1);
+//                 int rand = 1 + std::rand() % count;  // so this value is going to be between 1 and count
+//                 if (rand == count) {
+//                     res = i;
+//                 }
+//             }
+//         }
+//         return res;
+//     }
+// };
+
 class Solution {
+private:
+    vector<int> nums;
 public:
-    vector<int> A;
     Solution(vector<int>& nums) {
-        A = nums;
+        this->nums = nums;
     }
     
-    // C++: random = min + rand() % (max - min + 1) 
     int pick(int target) {
         int count = 0;
         int res = -1;
-        for (int i = 0; i < A.size(); i++) {
-            if (A[i] == target) {
-                if (res == -1) {  // this is important
-                    res = i;
-                }
+        for (int i = 0; i < nums.size(); ++i) {
+            if (nums[i] == target) {
                 count++;
-                // int rand = 1 + std::rand() % (count - 1 + 1);
-                int rand = 1 + std::rand() % count;  // so this value is going to be between 1 and count
-                if (rand == count) {
+                if (rand() % count == 0) {
                     res = i;
                 }
             }
