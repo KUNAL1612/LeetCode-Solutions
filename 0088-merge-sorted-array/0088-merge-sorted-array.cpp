@@ -9,6 +9,7 @@ public:
         // the smallest value pointed at by p1 or p2.
         for (int p = m + n - 1; p >= 0; p--) {
             if (p2 < 0) {
+                // already written all of p2's values onto it. no need to go further
                 break;
             }
             if (p1 >= 0 && nums1[p1] > nums2[p2]) {
@@ -21,5 +22,5 @@ public:
 };
 
 
-// 1 2 3 0 0 6
+// 1 2 2 3 5 6
 // 2, 5, 6
