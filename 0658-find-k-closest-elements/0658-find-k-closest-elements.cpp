@@ -83,7 +83,3 @@ public:
         return result;
     }
 };
-
-// Better solution (not really but easier to remember)
-// find the number that's closest to the given number
-// then expand outwards greedily picking the smaller number each time
