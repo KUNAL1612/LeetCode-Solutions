@@ -27,19 +27,48 @@
  *     const vector<NestedInteger> &getList() const;
  * };
  */
+// class Solution {
+// public:
+//     int depthSum(vector<NestedInteger>& nestedList, int depth=1) {
+//         int sum=0;
+//         for(int i=0;i<nestedList.size();i++){
+//             if(nestedList[i].isInteger()){
+//                 sum+=(depth*nestedList[i].getInteger());
+//             }
+//             else{
+//                 sum+=depthSum(nestedList[i].getList(),depth+1);
+//             }
+//         }
+//         return sum;
+        
+//     }
+// };
+
+
 class Solution {
 public:
-    int depthSum(vector<NestedInteger>& nestedList, int depth=1) {
-        int sum=0;
-        for(int i=0;i<nestedList.size();i++){
-            if(nestedList[i].isInteger()){
-                sum+=(depth*nestedList[i].getInteger());
-            }
-            else{
-                sum+=depthSum(nestedList[i].getList(),depth+1);
+    int depthSum(vector<NestedInteger>& nestedList) {
+        stack<pair<vector<NestedInteger>, int>> stk;
+        int sum = 0;
+        stk.push({nestedList, 1}); // Initial depth is 1
+        
+        while (!stk.empty()) {
+            auto [list, depth] = stk.top();
+            stk.pop();
+            
+            for (auto& nestedInt : list) {
+                if (nestedInt.isInteger()) {
+                    sum += nestedInt.getInteger() * depth;
+                } else {
+                    stk.push({nestedInt.getList(), depth + 1});
+                }
             }
         }
-        return sum;
         
+        return sum;
     }
 };
+
+
+
+//bfs, dfs, arrays, hashtables, linkedlists
