@@ -109,7 +109,7 @@ private:
     
 public:
     int calculate(std::string s) {
-        s += '@'; // Adding a delimiter at the end to indicate the end of the string
+        s += ')'; // Adding a delimiter at the end to indicate the end of the string
         int i = 0;
         return solve(s, i);
     }
