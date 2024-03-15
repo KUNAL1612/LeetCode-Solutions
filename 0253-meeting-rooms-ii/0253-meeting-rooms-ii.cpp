@@ -24,3 +24,5 @@ public:
         return rooms.size();
     }
 };
+
+// rooms can be a pq instead of a vector
