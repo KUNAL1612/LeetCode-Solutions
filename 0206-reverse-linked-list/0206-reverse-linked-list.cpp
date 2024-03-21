@@ -23,3 +23,6 @@ public:
         return pre;   
     }
 };
+
+// pre, curr, next
+
