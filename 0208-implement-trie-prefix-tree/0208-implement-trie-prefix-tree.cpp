@@ -22,11 +22,11 @@ public:
     /** Inserts a word into the trie. */
     void insert(string word) {
         int len=word.size();
-        struct Node *temp = root;
+        Node *temp = root;
         for(int i=0;i<len;i++){
             int index=word[i]-'a';
             if(temp->next[index]==NULL){
-                struct Node* newNode=new Node();
+                Node* newNode=new Node();
                 temp->next[index]=newNode;
                 temp=newNode;
             }
