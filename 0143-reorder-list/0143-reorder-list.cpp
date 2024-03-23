@@ -36,7 +36,7 @@ public:
             curr = tmp;
         }
 
-        // merge two sorted linked lists [Problem 21]
+        // merge two sorted linked lists [Problem 21]. More like interweave two linked lists
         // merge 1->2->3->4 and 6->5->4 into 1->6->2->5->3->4
         ListNode* first = head;
         ListNode* second = prev;
