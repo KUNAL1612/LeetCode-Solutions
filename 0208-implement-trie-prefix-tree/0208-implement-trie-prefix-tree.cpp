@@ -1,7 +1,7 @@
 
 
 struct Node{
-    struct Node* next[26];
+    Node* next[26];
     bool end;
     Node(){
         for(int i=0;i<26; i++){
