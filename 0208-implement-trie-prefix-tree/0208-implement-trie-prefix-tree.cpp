@@ -14,7 +14,7 @@ struct Node{
 class Trie {
 public:
     /** Initialize your data structure here. */
-   struct Node* root; //dummy head 
+    Node* root; //dummy head 
     Trie() {
         root=new Node();
     }
