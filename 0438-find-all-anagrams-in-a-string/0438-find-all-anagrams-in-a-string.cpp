@@ -20,7 +20,7 @@ public:
             ans.push_back(0);
         }
         for(int i=n;i<p.size();i++){
-            pp[p[i]-'a']++;
+            pp[p[i]-'a']++; // move the sliding window
             pp[p[i-n]-'a']--;
             if(sp==pp){ //vector equality works!!!
                 ans.push_back(i-n+1);
