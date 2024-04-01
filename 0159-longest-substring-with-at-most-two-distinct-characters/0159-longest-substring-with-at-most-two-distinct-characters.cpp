@@ -26,7 +26,7 @@ public:
                     del_idx = min(del_idx, element.second);
                 }
                 // delete the leftmost character
-                hashmap.erase(s[del_idx]);
+                hashmap.erase(s[del_idx]); // cool beans
                 left = del_idx + 1;
             }
             max_len = max(max_len, right - left);
