@@ -41,7 +41,7 @@ public:
                     }
                     // ideas from https://leetcode.com/problems/minimum-knight-moves/discuss/387000/c++-bfs-solution/418539
 					// one long move or two short moves into negative direction in order to have access to (0,1) and similar targets
-                    if(!visited[nextX][nextY])
+                    if(!visited[nextX][nextY] && nextX * x >= -2 && nextY * y >= -2)
                     {
                         visited[nextX][nextY] = true;
                         Q.push(make_pair(nextX, nextY));
