@@ -1,7 +1,7 @@
 class Solution {
 public:
     // Adjacency list, defined it as per the maximum number of nodes
-    
+    // greedy + backtrakcing
     vector<pair<int, int>> adj[101];
     
     void dijkstra(vector<int>& signalReceivedAt, int source, int n) {
