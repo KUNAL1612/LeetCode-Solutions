@@ -15,7 +15,7 @@ public:
         if (node != 0) {
             // Count the fuel it takes to move to the parent node.
             // Root node does not have any parent so we ignore it.
-            fuel += ceil((double)representatives / seats) * 1.0; // times 1 because cost is 1
+            fuel += ceil((double)representatives / seats) * 1.0; // times 1 because cost is 1 to travel between two different cities
         }
         return representatives;
     }
