@@ -16,7 +16,7 @@
 class Solution {
 public:
     
-    int ans; 
+    int ans = 0; 
     
     void dfs(TreeNode* root, int temp){
         if(root==NULL){
@@ -24,7 +24,7 @@ public:
         }
         temp=temp*10+root->val;
         if(root->left==NULL && root->right==NULL){
-            
+            // leaf node
             ans+=temp;
             return;
         }
