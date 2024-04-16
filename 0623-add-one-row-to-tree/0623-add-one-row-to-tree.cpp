@@ -11,32 +11,40 @@
  */
 class Solution {
 public:
-    
-    void dfs(TreeNode* root, int v, int d, int c_d){
-        if(root==NULL){
-            return;
-        }
-        if(c_d==d-1){
-            TreeNode* a=root->left;
-            root->left=new TreeNode(v);
-            root->left->left=a;
-            a=root->right;
-            root->right=new TreeNode(v);
-            root->right->right=a;
-        }
-        else{
-            dfs(root->left,v,d,c_d+1);
-            dfs(root->right,v,d,c_d+1);
-        }
-    }
-    
     TreeNode* addOneRow(TreeNode* root, int v, int d) {
-        if(d==1){
-            TreeNode* a=new TreeNode(v);
-            a->left=root;
-            return a;
+        if(d == 1){
+            TreeNode* newNode = new TreeNode(v);
+            newNode->left = root;
+            return newNode;
         }
-        dfs(root, v, d, 1);
+        
+        queue<TreeNode*> que;
+        que.push(root);
+        int depth = 1;
+        while(depth < d - 1){
+            int qsize = que.size();
+            for(int i = 0; i < qsize; i ++){
+                TreeNode* node = que.front();
+                que.pop();
+                if(node->left != NULL){
+                    que.push(node->left);
+                }
+                if(node->right != NULL){
+                    que.push(node->right);
+                }
+            }
+            depth ++;
+        }
+        while(!que.empty()){
+            TreeNode* node = que.front();
+            que.pop();
+            TreeNode* temp = node->left;
+            node->left = new TreeNode(v);
+            node->left->left = temp;
+            temp = node->right;
+            node->right = new TreeNode(v);
+            node->right->right = temp;
+        }
         return root;
     }
 };
