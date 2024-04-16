@@ -6,7 +6,7 @@ public:
         if(coins.size()==0){
             return -1;
         }
-        sort(coins.begin(),coins.end());
+        
         vector<int> dp(amount+1,-1);
         dp[0]=0;
         for(int i=1;i<=amount;i++){
