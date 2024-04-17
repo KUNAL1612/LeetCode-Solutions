@@ -35,6 +35,7 @@ public:
         while (left < right) {
             int mid = left + (right - left) / 2;
             if (target - arr[mid] > arr[mid + k] - target) {
+                // Let's consider two indices at each binary search operation, the usual mid, and some index mid + k. The relationship between these indices is significant because only one of them could possibly be in a final answer. 
                 left = mid + 1;
             } else {
                 right = mid;
